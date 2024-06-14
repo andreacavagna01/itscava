@@ -5,13 +5,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const result = await fetch(
-    `https://plausible.io/api/v1/stats/aggregate?site_id=braydoncoyer.dev&period=500mo&metrics=pageviews`,
-    {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${process.env.PLAUSIBLE_API_TOKEN}`
-      }
-    }
+    `https://plausible.io/api/v1/stats/aggregate?site_id=braydoncoyer.dev&period=500mo&metrics=pageviews`
   );
 
   const data = await result.json();

@@ -35,7 +35,8 @@ module.exports = {
       'res.craft.do',
       'res.cloudinary.com',
       'robohash.org',
-      'iad.microlink.io' // link preview
+      'iad.microlink.io',
+      'x.com' // link preview
     ]
   }
 };
