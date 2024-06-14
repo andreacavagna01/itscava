@@ -23,6 +23,7 @@ export const getToolboxData = async (databaseId) => {
     results.push({
       title: item.properties.Name.title[0].plain_text,
       types: item.properties.Type.multi_select.map((x) => x.name),
+      imageUrl: item.properties.ImageUrl?.url,
       description: item.properties.Description.rich_text[0].plain_text,
       url: item.properties.URL?.url
     });
