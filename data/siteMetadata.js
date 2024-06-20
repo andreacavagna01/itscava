@@ -8,9 +8,9 @@ const siteMetadata = {
   siteUrl: 'https://www.itscava.com',
   siteRepo: 'https://github.com/andreacavagna01/itscava.com',
   avatarImage:
-    'Change',
+    'https://res.cloudinary.com/braydoncoyer/image/upload/v1636553710/avatar.jpg',
   socialBanner:
-    'Change',
+    'https://res.cloudinary.com/braydoncoyer/image/upload/v1638884997/default-social-image.png',
   email: 'mailto:a.cava94@gmail.com',
   github: 'https://github.com/andreacavagna01',
   twitter: 'https://twitter.com/a_cava94',
