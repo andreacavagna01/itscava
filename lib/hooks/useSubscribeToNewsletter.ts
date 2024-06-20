@@ -1,11 +1,9 @@
 import { Form, FormState } from '../types';
 import { useRef, useState } from 'react';
 
-import { usePlausible } from 'next-plausible';
 
 export function useSubscribeToNewsletter() {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
-  const plausible = usePlausible();
   const inputEl = useRef(null);
 
   async function subscribe(e) {
@@ -32,7 +30,6 @@ export function useSubscribeToNewsletter() {
       return;
     }
 
-    plausible('Subscribe');
 
     inputEl.current.value = '';
     setForm({
