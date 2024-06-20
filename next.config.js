@@ -36,7 +36,7 @@ module.exports = {
       'res.cloudinary.com',
       'robohash.org',
       'iad.microlink.io',
-      'x.com' // link preview
+      'prod-files-secure.s3.us-west-2.amazonaws.com'
     ]
   }
 };

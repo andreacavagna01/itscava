@@ -22,7 +22,7 @@ export default function Toolbox({ software, hardware, thisSite }) {
             {software?.map((item, index) => (
 
               <div key={`${item.url}${index}`}>
-                <h3 className="m-0 text-xl font-medium">{item.title} {item.imageUrl}</h3>
+                <h3 className="m-0 text-xl font-medium">{item.title}</h3>
                 <div className="block space-x-4">
                   {item.types.map((tag) => (
                     <span key={tag} className="text-sm">
