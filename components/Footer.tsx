@@ -15,9 +15,7 @@ const navigation = {
     { name: 'Toolbox', href: '/toolbox' },
     { name: 'Speaking', href: '/speaking' }
   ],
-  extra: [
-    { name: 'Meet up', href: '/meetup' }
-  ],
+  extra: [{ name: 'Meet up', href: '/meetup' }],
   social: [
     {
       name: 'Twitter',

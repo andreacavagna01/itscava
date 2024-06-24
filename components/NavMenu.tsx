@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import DarkLogo from 'public/bcoyerlogo_dark.svg';
+import DarkLogo from 'public/andrea-cavagna.svg';
 import { Dialog } from '@headlessui/react';
 import Image from 'next/image';
-import LightLogo from 'public/bcoyerlogo_white.svg';
+import LightLogo from 'public/andrea-cavagna-light.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
@@ -43,7 +43,7 @@ export function NavMenu({}) {
           <Link href="/" passHref>
             <span className="block dark:hidden">
               <Image
-                alt="Braydon Coyer"
+                alt="Andrea Cavagna"
                 height={38}
                 width={38}
                 src={DarkLogo}
@@ -55,7 +55,7 @@ export function NavMenu({}) {
           <Link href="/" passHref>
             <span className="hidden dark:block">
               <Image
-                alt="Braydon Coyer"
+                alt="Andrea Cavagna"
                 height={38}
                 width={38}
                 src={LightLogo}
