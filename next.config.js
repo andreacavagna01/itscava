@@ -36,7 +36,8 @@ module.exports = {
       'res.cloudinary.com',
       'robohash.org',
       'iad.microlink.io',
-      'prod-files-secure.s3.us-west-2.amazonaws.com'
+      'prod-files-secure.s3.us-west-2.amazonaws.com',
+      'nextui.org'
     ]
   }
 };
