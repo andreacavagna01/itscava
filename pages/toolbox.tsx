@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Container } from 'layouts/Container';
 import CustomLink from '@/components/CustomLink';
 import { GetStaticProps } from 'next';
+import { ToolboxCard } from '@/components/ToolboxCard';
 
 export default function Toolbox({ software, hardware, thisSite }) {
   return (
@@ -20,41 +21,16 @@ export default function Toolbox({ software, hardware, thisSite }) {
           <h2>Software</h2>
           <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
             {software?.map((item, index) => (
-
-              <div key={`${item.url}${index}`}>
-                <h3 className="m-0 text-xl font-medium">{item.title}</h3>
-                <div className="block space-x-4">
-                  {item.types.map((tag) => (
-                    <span key={tag} className="text-sm">
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-4">
-                  <p className="m-0 mb-3 text-base">{item.description}</p>
-                  {item.url ? (
-                    <span className="text-base">
-                      <CustomLink href={item.url}>Check it out</CustomLink>
-                    </span>
-                  ) : null}
-                </div>
-                <Image
-                  width={32}
-                  height={32}
-                  className="flex-shrink-0 rounded-full"
-                  src={item.imageUrl
-                    ? item.imageUrl
-                    : `https://via.placeholder.com/600x400.png`}
-                  alt={`${item.title} Logo`} />
-              </div>
+              <ToolboxCard item={item}></ToolboxCard>
             ))}
           </div>
         </div>
-        <div className="flex justify-center">
-        </div>
+        <div className="flex justify-center"></div>
         <p className="text-base">
           Influenced by{' '}
-          <CustomLink href="https://www.braydoncoyer.dev/toolbox">Braydon Coyer</CustomLink>
+          <CustomLink href="https://www.braydoncoyer.dev/toolbox">
+            Braydon Coyer
+          </CustomLink>
           .
         </p>
       </div>
