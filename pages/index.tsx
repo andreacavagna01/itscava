@@ -1,5 +1,6 @@
 import { ButtonType, SubscribeSize } from '@/lib/types';
 import { convertToArticleList, getPublishedArticles } from '@/lib/notion';
+import profileImage from 'public/assets/headerImage.jpg';
 
 import { ArticleList } from '@/components/ArticleList';
 import { Button } from '@/components/Button';
@@ -20,15 +21,16 @@ export default function Home({ recentArticles }) {
           <div className="grid items-center grid-cols-1 mt-12 text-center md:mt-24 md:text-left md:grid-cols-6">
             <h1 className="order-2 col-span-5 text-4xl leading-tight md:leading-normal md:order-1 sm:text-5xl">
               I'm{' '}
-              <span className="text-teal-500 dark:text-teal-400">Braydon</span>.
-              I'm a developer, blogger and speaker working at LogicGate.
+              <span className="text-teal-500 dark:text-teal-400">Andrea</span>.
+              I'm a developer by night, Product Manager by day and I like to
+              write blog posts.
             </h1>
             <div className="order-1 md:order-2">
               <Image
-                alt="Braydon Coyer"
+                alt="Andrea Cavagna"
                 height={160}
                 width={160}
-                src={siteMetadata.avatarImage}
+                src={profileImage}
                 placeholder="blur"
                 blurDataURL={siteMetadata.avatarImage}
                 className="col-span-1 rounded-full"

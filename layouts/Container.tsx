@@ -5,7 +5,7 @@ import Image from 'next/legacy/image';
 import { NavMenu } from '@/components/NavMenu';
 import { PageTransition } from '@/components/PageTransition';
 import { PageType } from '@/lib/types';
-import TopRays from 'public/rays.png';
+import Background from 'public/assets/Parabolic Pentagon.svg';
 import siteMetadata from '@/data/siteMetadata';
 import { useRouter } from 'next/router';
 import { NextUIProvider } from '@nextui-org/react';
@@ -30,7 +30,7 @@ export function Container(props) {
 
   return (
     <NextUIProvider>
-      <div className={`bg-white dark:bg-dark min-h-screen`}>
+      <div className={`bg-white dark:bg-dark min-h-screen overflow-hidden`}>
         <Head>
           <title>{meta.title}</title>
           <meta name="robots" content="follow, index" />
@@ -90,34 +90,16 @@ export function Container(props) {
             <meta property="article:published_time" content={meta.date} />
           )}
         </Head>
+        <div className="absolute overflow-hidden bg-white dark:bg-dark ">
+          <Image className="opacity-30 bottom-80" src={Background} alt="" />
+        </div>
         <NavMenu />
         <main
-          className={`flex flex-col mx-auto max-w-6xl justify-center px-4 bg-white dark:bg-dark prose prose-lg dark:prose-dark relative pt-24`}
+          className={`flex flex-col mx-auto max-w-6xl justify-center px-4 prose prose-lg dark:prose-dark relative pt-24`}
         >
-          <div className="absolute overflow-hidden -top-32 md:-top-72 md:right-36">
-            <Image
-              className="absolute top-0 right-0"
-              src={TopRays}
-              alt=""
-              width={924}
-              height={718}
-              unoptimized
-            />
-          </div>
-
           <div className="z-10">
             <PageTransition>{children}</PageTransition>
             <Footer />
-          </div>
-          <div className="absolute bottom-0 overflow-hidden">
-            <Image
-              className="absolute -right-44 -bottom-64 md:right-0 md:-bottom-96"
-              src={BottomRays}
-              alt=""
-              width={924}
-              height={718}
-              unoptimized
-            />
           </div>
         </main>
       </div>

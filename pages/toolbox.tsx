@@ -1,5 +1,4 @@
 import { getPageInfo, getToolboxData } from '@/lib/notion';
-import Image from 'next/image';
 import { Container } from 'layouts/Container';
 import CustomLink from '@/components/CustomLink';
 import { GetStaticProps } from 'next';
