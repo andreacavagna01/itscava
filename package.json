@@ -13,6 +13,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.0",
     "@headlessui/react": "^1.4.1",
     "@microlink/mql": "^0.10.31",
     "@nextui-org/react": "^2.4.2",

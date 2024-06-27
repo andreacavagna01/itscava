@@ -11,6 +11,7 @@ type Props = {
 
 export function ArticleCard({ article }: Props) {
   const slug = slugify(article.title).toLowerCase();
+  console.log(slug);
   const [hasRead] = useIsArticleRead(slug);
 
   return (
@@ -23,7 +24,7 @@ export function ArticleCard({ article }: Props) {
             src={article.coverImage}
             placeholder="blur"
             blurDataURL={article.coverImage}
-            width={684}
+            width={800}
             height={800}
             layout="intrinsic"
             alt={'article cover'}
