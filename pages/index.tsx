@@ -12,6 +12,7 @@ import { generateRssFeed } from 'scripts/generate-rss';
 import siteMetadata from '@/data/siteMetadata';
 import { useRouter } from 'next/router';
 import { Appointment } from '@/components/Appointment';
+import GithubCalendar from '@/components/GitHubCalendar';
 
 export default function Home({ recentArticles }) {
   const { push } = useRouter();
@@ -29,8 +30,8 @@ export default function Home({ recentArticles }) {
             <div className="order-1 md:order-2">
               <Image
                 alt="Andrea Cavagna"
-                height={160}
-                width={160}
+                height={220}
+                width={220}
                 src={profileImage}
                 placeholder="blur"
                 blurDataURL={siteMetadata.avatarImage}
@@ -66,6 +67,9 @@ export default function Home({ recentArticles }) {
             >
               See all articles
             </Button>
+          </div>
+          <div className="mt-16">
+            <GithubCalendar username={'andreacavagna01'}></GithubCalendar>
           </div>
           <div className="mt-16">
             <h2>Share a moment with me</h2>
