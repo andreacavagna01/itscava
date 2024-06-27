@@ -11,6 +11,7 @@ import { Subscribe } from '@/components/Subscribe';
 import { generateRssFeed } from 'scripts/generate-rss';
 import siteMetadata from '@/data/siteMetadata';
 import { useRouter } from 'next/router';
+import { Appointment } from '@/components/Appointment';
 
 export default function Home({ recentArticles }) {
   const { push } = useRouter();
@@ -67,7 +68,9 @@ export default function Home({ recentArticles }) {
             </Button>
           </div>
           <div className="mt-16">
-            <Subscribe size={SubscribeSize.LARGE} />
+            <h2>Share a moment with me</h2>
+            <p>How I can help you?</p>
+            <Appointment></Appointment>
           </div>
         </div>
       </div>

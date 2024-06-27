@@ -9,15 +9,15 @@ export async function generateRssFeed() {
   const articles = await convertToArticleList(resp);
 
   const feed = new RSS({
-    title: 'Braydon Coyer',
-    site_url: 'https://braydoncoyer.dev',
-    feed_url: 'https://braydoncoyer.dev/rss.xml'
+    title: 'Andrea Cavagna',
+    site_url: 'https://itscava.com',
+    feed_url: 'https://itscava.com/rss.xml'
   });
 
   articles.articles.map((post) => {
     feed.item({
       title: post.title,
-      url: `https://braydoncoyer.dev/blog/${slugify(
+      url: `https://itscava.com/blog/${slugify(
         post.title
       ).toLocaleLowerCase()}`,
       date: post.publishedDate,

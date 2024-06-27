@@ -248,12 +248,6 @@ const ArticlePage = ({
     }
   );
 
-  useEffect(() => {
-    fetch(`/api/views/${slug}`, {
-      method: 'POST'
-    });
-  }, [slug]);
-
   return (
     <Container
       title={title}
@@ -392,7 +386,9 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   let lastEditedAt = null;
   let coverImage = null;
   let sponsoredArticleUrl = null;
+
   let summary = null;
+  console.log('--------------------------');
 
   const notion = new Client({
     auth: process.env.NOTION_SECRET
@@ -401,7 +397,8 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const data: any = await getAllArticles(process.env.BLOG_DATABASE_ID);
 
   const page: any = getArticlePage(data, slug);
-
+  console.log(page);
+  console.log('--------------------------');
   articleTitle = page.properties.Name.title[0].plain_text;
   publishedDate = page.properties.Published.date.start;
   lastEditedAt = page.properties.LastEdited.last_edited_time;
@@ -430,7 +427,10 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
     });
 
     content = [...content, ...blocks.results];
+    console.log(content);
   }
+
+  console.log('--------------------------');
 
   return {
     props: {
