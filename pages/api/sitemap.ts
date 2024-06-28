@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     .map((page) => {
       const route = page === '/index' ? '' : page;
       // Build url portion of sitemap.xml
-      return `<url><loc>https://braydoncoyer.dev${route}</loc><changefreq>daily</changefreq>
+      return `<url><loc>https://itscava.com${route}</loc><changefreq>daily</changefreq>
 <priority>0.7</priority></url>`;
     })
     .join('');

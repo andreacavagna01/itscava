@@ -177,26 +177,6 @@ export function renderBlocks(block) {
           </div>
         </Callout>
       );
-    case 'embed':
-      const codePenEmbedKey = value.url.slice(value.url.lastIndexOf('/') + 1);
-      return (
-        <div>
-          <iframe
-            height="600"
-            className="w-full"
-            scrolling="no"
-            title="Postage from Bag End"
-            src={`https://codepen.io/braydoncoyer/embed/preview/${codePenEmbedKey}?default-tab=result`}
-            frameBorder="no"
-            loading="lazy"
-            allowFullScreen={true}
-          >
-            See the Pen <a href={value.url}>Postage from Bag End</a> by Braydon
-            Coyer (<a href="https://codepen.io/braydoncoyer">@braydoncoyer</a>)
-            on <a href="https://codepen.io">CodePen</a>.
-          </iframe>
-        </div>
-      );
     case 'table_of_contents':
       return <div>TOC</div>;
     case 'video':
@@ -345,9 +325,6 @@ const ArticlePage = ({
         </div>
       </div>
       <div>
-        <div className="my-8 lg:mt-64">
-          <Subscribe size={SubscribeSize.LARGE} />
-        </div>
         <div>
           <h3 className="mb-8">Related articles</h3>
           <ArticleList articles={moreArticles} />
@@ -388,7 +365,6 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   let sponsoredArticleUrl = null;
 
   let summary = null;
-  console.log('--------------------------');
 
   const notion = new Client({
     auth: process.env.NOTION_SECRET
@@ -397,8 +373,6 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
   const data: any = await getAllArticles(process.env.BLOG_DATABASE_ID);
 
   const page: any = getArticlePage(data, slug);
-  console.log(page);
-  console.log('--------------------------');
   articleTitle = page.properties.Name.title[0].plain_text;
   publishedDate = page.properties.Published.date.start;
   lastEditedAt = page.properties.LastEdited.last_edited_time;
@@ -427,10 +401,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
     });
 
     content = [...content, ...blocks.results];
-    console.log(content);
   }
-
-  console.log('--------------------------');
 
   return {
     props: {

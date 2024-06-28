@@ -63,7 +63,7 @@ export function Container(props) {
           />
           <link rel="canonical" href={meta.canonicalUrl} />
           <meta property="og:type" content={meta.type} />
-          <meta property="og:site_name" content="Braydon Coyer" />
+          <meta property="og:site_name" content="Andrea Cavagna" />
           <meta property="og:description" content={meta.description} />
           <meta property="og:title" content={meta.title} />
           <meta
@@ -89,6 +89,12 @@ export function Container(props) {
           {meta.date && (
             <meta property="article:published_time" content={meta.date} />
           )}
+
+          <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="a7b7390c-2103-4434-afa1-1fe80ccbd3bc"
+          ></script>
         </Head>
         <div className="absolute overflow-hidden bg-white dark:bg-dark ">
           <Image className="opacity-30 bottom-80" src={Background} alt="" />

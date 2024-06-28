@@ -7,6 +7,7 @@ import LightLogo from 'public/andrea-cavagna-light.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
+import siteMetadata from '@/data/siteMetadata';
 
 function NavItem({ href, text }) {
   const router = useRouter();
@@ -95,10 +96,9 @@ export function NavMenu({}) {
         </div>
         <nav className="hidden space-x-8 text-lg md:flex">
           <NavItem href="/" text="Home" />
-          <NavItem href="/about" text="About" />
-          <NavItem href="/projects" text="Projects" />
+          <NavItem href="/toolbox" text="Toolbox" />
           <NavItem href="/blog" text="Blog" />
-          <NavItem href="/community-wall" text="Community wall" />
+          <NavItem href={siteMetadata.resume} text="Resume" />
         </nav>
 
         <div className="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
