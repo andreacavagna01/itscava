@@ -16,10 +16,8 @@ import { CodeBlock } from '@/components/Codeblock';
 import { Container } from 'layouts/Container';
 import CustomLink from '@/components/CustomLink';
 import Image from 'next/legacy/image';
-import PageViews from '@/components/PageViews';
 import Reactions from '@/components/Reactions';
 import { ShareArticle } from '@/components/ShareArticle';
-import { Subscribe } from '@/components/Subscribe';
 import { YoutubeEmbed } from '@/components/YoutubeEmbed';
 import siteMetadata from '@/data/siteMetadata';
 import slugify from 'slugify';
@@ -250,7 +248,6 @@ const ArticlePage = ({
                 <div className="flex items-center justify-center mb-2 space-x-2 text-base">
                   <p className="m-0">{publishedOn}</p>
                   <p className="m-0">|</p>
-                  <PageViews slug={slug} />
                 </div>
                 {publishedOn !== modifiedDate && (
                   <p className="mt-0 text-sm text-slate-500 md:text-base dark:text-slate-500">
