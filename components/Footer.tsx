@@ -10,12 +10,8 @@ const navigation = {
     { name: 'Projects', href: '/projects' },
     { name: 'Blog', href: '/blog' }
   ],
-  specifics: [
-    { name: 'Community wall', href: '/community-wall' },
-    { name: 'Toolbox', href: '/toolbox' },
-    { name: 'Speaking', href: '/speaking' }
-  ],
-  extra: [{ name: 'Meet up', href: '/meetup' }],
+  specifics: [{ name: 'Toolbox', href: '/toolbox' }],
+  extra: [],
   social: [
     {
       name: 'Twitter',
