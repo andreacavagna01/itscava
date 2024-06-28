@@ -30,8 +30,8 @@ export function ToolboxCard({ item }) {
             </div>
             <div className=" w-full mb-1">
               {item &&
-                item.types.map((typeItem: any) => (
-                  <Chip radius="sm" className="mr-1">
+                item.types.map((typeItem: any, index) => (
+                  <Chip key={index} radius="sm" className="mr-1">
                     {typeItem}
                   </Chip>
                 ))}

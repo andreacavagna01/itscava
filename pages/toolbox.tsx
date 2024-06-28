@@ -4,7 +4,7 @@ import CustomLink from '@/components/CustomLink';
 import { GetStaticProps } from 'next';
 import { ToolboxCard } from '@/components/ToolboxCard';
 
-export default function Toolbox({ software, hardware, thisSite }) {
+export default function Toolbox({ software }) {
   return (
     <Container>
       <h1>
@@ -20,7 +20,7 @@ export default function Toolbox({ software, hardware, thisSite }) {
           <h2>Software</h2>
           <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
             {software?.map((item, index) => (
-              <ToolboxCard item={item}></ToolboxCard>
+              <ToolboxCard key={index} item={item}></ToolboxCard>
             ))}
           </div>
         </div>
@@ -38,9 +38,10 @@ export default function Toolbox({ software, hardware, thisSite }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  console.log('----------------------------');
   const data = await getPageInfo(process.env.TOOLBOX_PAGE_ID);
   const software = await getToolboxData(process.env.TOOLBOX_PAGE_ID);
-
+  console.log(process.env.TOOLBOX_PAGE_ID);
   return {
     props: {
       toolboxContent: data,
