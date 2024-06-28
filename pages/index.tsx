@@ -1,4 +1,4 @@
-import { ButtonType, SubscribeSize } from '@/lib/types';
+import { ButtonType } from '@/lib/types';
 import { convertToArticleList, getPublishedArticles } from '@/lib/notion';
 import profileImage from 'public/assets/headerImage.jpg';
 
@@ -7,9 +7,7 @@ import { Button } from '@/components/Button';
 import { Container } from 'layouts/Container';
 import { GetStaticProps } from 'next';
 import Image from 'next/legacy/image';
-import { Subscribe } from '@/components/Subscribe';
 import { generateRssFeed } from 'scripts/generate-rss';
-import siteMetadata from '@/data/siteMetadata';
 import { useRouter } from 'next/router';
 import { Appointment } from '@/components/Appointment';
 import GithubCalendar from '@/components/GitHubCalendar';
@@ -68,6 +66,11 @@ export default function Home({ recentArticles }) {
             </Button>
           </div>
           <div className="mt-16">
+            <h2>Open-source is a big part of my life in the past years</h2>
+            <p>
+              There are so many ways to contribute to the OSS community. Here
+              you can see just a few of them:
+            </p>
             <GithubCalendar username={'andreacavagna01'}></GithubCalendar>
           </div>
           <div className="mt-16">
