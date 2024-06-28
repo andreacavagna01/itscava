@@ -244,19 +244,7 @@ export default async function handler(req: NextRequest) {
                 </svg>
                 <div tw="absolute top-[530px] left-[50px] text-slate-300 text-xl flex flex justify-between w-full">
                   <div tw="flex flex-col">
-                    <div tw="flex items-center">
-                      <img
-                        tw="rounded-full w-18 mr-4"
-                        src={siteMetadata.avatarImage}
-                        alt="profile picture"
-                      />
-                      <div tw="flex flex-col">
-                        <h1 tw="m-0 text-2xl">Braydon Coyer</h1>
-                        <h2 tw="m-0" style={{ fontFamily: 'Inter-Medium' }}>
-                          braydoncoyer.dev
-                        </h2>
-                      </div>
-                    </div>
+                    <div tw="flex items-center"></div>
                   </div>
                   <div
                     tw="flex text-[#A8AFC1] text-2xl"

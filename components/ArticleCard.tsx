@@ -11,7 +11,6 @@ type Props = {
 
 export function ArticleCard({ article }: Props) {
   const slug = slugify(article.title).toLowerCase();
-  console.log(slug);
   const [hasRead] = useIsArticleRead(slug);
 
   return (

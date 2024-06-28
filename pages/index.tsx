@@ -34,7 +34,6 @@ export default function Home({ recentArticles }) {
                 width={220}
                 src={profileImage}
                 placeholder="blur"
-                blurDataURL={siteMetadata.avatarImage}
                 className="col-span-1 rounded-full"
                 layout="fixed"
               />
