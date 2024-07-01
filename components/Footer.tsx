@@ -11,11 +11,10 @@ const navigation = {
     { name: 'Blog', href: '/blog' }
   ],
   specifics: [
-    { name: 'Community wall', href: '/community-wall' },
     { name: 'Toolbox', href: '/toolbox' },
     { name: 'Speaking', href: '/speaking' }
   ],
-  extra: [{ name: 'Meet up', href: '/meetup' }],
+  extra: [{ name: 'Contact me', href: 'mailto:me@itscava.com' }],
   social: [
     {
       name: 'Twitter',
