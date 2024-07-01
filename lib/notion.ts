@@ -9,12 +9,7 @@ const notion = new Client({
 export const getToolboxData = async (databaseId) => {
   const response: QueryDatabaseResponse = await notion.databases.query({
     database_id: databaseId,
-    sorts: [
-      {
-        property: 'Name',
-        direction: 'ascending'
-      }
-    ]
+    sorts: []
   });
 
   const results = [];
@@ -32,13 +27,13 @@ export const getToolboxData = async (databaseId) => {
   return results;
 };
 
-export const getWorkTimelineData = async (databaseId) => {
+export const getInspirationsData = async (databaseId) => {
   const response: QueryDatabaseResponse = await notion.databases.query({
     database_id: databaseId,
     sorts: [
       {
-        property: 'Duration',
-        direction: 'descending'
+        property: 'Name',
+        direction: 'ascending'
       }
     ]
   });
@@ -47,11 +42,11 @@ export const getWorkTimelineData = async (databaseId) => {
 
   response.results.forEach((item: any) => {
     results.push({
-      title: item.properties.Name.title[0].plain_text,
-      company: item.properties.Company.select.name,
-      description: item.properties.Description.rich_text[0].plain_text,
-      duration: item.properties.Duration.rich_text[0].text.content,
-      comapny_url: item.properties.CompanyUrl?.url
+      title: item.properties.Title.title[0].plain_text,
+      types: item.properties.Type.multi_select.map((x) => x.name),
+      imageUrl: item.properties.Image.files[0].file.url,
+      description: item.properties.Thoughts.rich_text[0].plain_text,
+      url: item.properties.URL?.url
     });
   });
 
@@ -82,44 +77,6 @@ export const getListOfTalksData = async (databaseId) => {
   });
 
   return results;
-};
-
-export const getChangelogData = async (databaseId) => {
-  const response: QueryDatabaseResponse = await notion.databases.query({
-    database_id: databaseId,
-    sorts: [
-      {
-        property: 'Date',
-        direction: 'descending'
-      }
-    ]
-  });
-
-  let completed = [],
-    active = [],
-    backlog = [];
-
-  response.results.forEach((item: any) => {
-    switch (item.properties.Status.select.name) {
-      case 'Completed':
-        completed = turnIntoChangelogItem(item, completed);
-        break;
-      case 'Backlog':
-        backlog = turnIntoChangelogItem(item, backlog);
-        break;
-      case 'Active':
-        active = turnIntoChangelogItem(item, active);
-        break;
-      default:
-        break;
-    }
-  });
-
-  return {
-    completed,
-    active,
-    backlog
-  };
 };
 
 export const getAllArticles = async (databaseId) => {
@@ -338,16 +295,4 @@ export function shuffleArray(array: Array<any>) {
     ];
   }
   return array;
-}
-
-function turnIntoChangelogItem(item: any, array: any[]) {
-  const updatedChangelogList = [
-    ...array,
-    {
-      title: item.properties.Name.title[0].plain_text,
-      description: item.properties.Description.rich_text[0].plain_text,
-      date: item.properties.Date?.date?.start
-    }
-  ];
-  return updatedChangelogList;
 }

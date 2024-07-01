@@ -10,7 +10,10 @@ const navigation = {
     { name: 'Projects', href: '/projects' },
     { name: 'Blog', href: '/blog' }
   ],
-  specifics: [{ name: 'Toolbox', href: '/toolbox' }],
+  specifics: [
+    { name: 'Toolbox', href: '/toolbox' },
+    { name: 'Speaking', href: '/speaking' }
+  ],
   extra: [{ name: 'Contact me', href: 'mailto:me@itscava.com' }],
   social: [
     {
