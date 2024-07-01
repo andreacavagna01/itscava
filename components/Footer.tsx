@@ -11,7 +11,7 @@ const navigation = {
     { name: 'Blog', href: '/blog' }
   ],
   specifics: [{ name: 'Toolbox', href: '/toolbox' }],
-  extra: [],
+  extra: [{ name: 'Contact me', href: 'mailto:me@itscava.com' }],
   social: [
     {
       name: 'Twitter',
