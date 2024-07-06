@@ -12,7 +12,7 @@ type Props = {
 export function ArticleCard({ article }: Props) {
   const slug = slugify(article.title).toLowerCase();
   const [hasRead] = useIsArticleRead(slug);
-
+  console.log(article.coverImage);
   return (
     <div>
       <button onClick={() => handleArticleClicked(slug)}>
